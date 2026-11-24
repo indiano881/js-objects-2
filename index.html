@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Objects – Games Exercises</title>
+  <script src="exercises.js" defer></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f4f5f7;
+      color: #222;
+    }
+    main { max-width: 800px; margin: 0 auto; }
+    h1 { margin-top: 0; }
+    section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+    h2 { border-bottom: 2px solid #eee; padding-bottom: 0.3rem; }
+    li { margin-bottom: 0.5rem; }
+    code {
+      background: #eef1f5;
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .output {
+      border: 2px dashed #ccc;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      min-height: 3rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>JS Objects – Games Exercises</h1>
+    <p>All data is in the <code>games</code> object in <code>exercises.js</code>. Write your answers there and check the console.</p>
+
+    <section>
+      <h2>Part 1 – Navigation</h2>
+      <ol>
+        <li>Log the country of The Witcher 3's developer.</li>
+        <li>Log Hollow Knight's main character's first ability.</li>
+        <li>Log the name of the last character in RDR2 (use <code>.length</code>).</li>
+        <li>Store <code>"setting"</code> in a variable <code>key</code> and log GTA 6's city with bracket notation.</li>
+        <li>Log how many platforms Crash Bandicoot is on.</li>
+        <li>Log the release year of The Witcher 3's second DLC.</li>
+        <li>Log the third track of Mario Kart's flower cup.</li>
+        <li>Safely log <code>games.crashBandicoot.dlc[0].name</code> with <code>?.</code>, if it is <code>undefined</code> (check with <code>typeof</code> + <code>if</code>) log <code>"No DLC"</code>.</li>
+        <li><strong>Change:</strong> set GTA 6's rating to <code>9.9</code>.</li>
+        <li><strong>Add:</strong> give The Last of Us a nested <code>sequel</code> object and log its title.</li>
+        <li><strong>Remove:</strong> delete RDR2's <code>horse</code> property.</li>
+        <li>Add a new character at the end of Crash's <code>characters</code> array <em>without push</em> (use <code>.length</code> as the index) and log the new length.</li>
+        <li>Destructure <code>title</code> and the developer <code>name</code> (as <code>devName</code>) from Hollow Knight.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Part 2 – Object Methods &amp; Looping</h2>
+      <ol>
+        <li>Use <code>Object.keys</code> to log how many games there are.</li>
+        <li>Use <code>Object.values</code> + <code>forEach</code> to log every title.</li>
+        <li>Use <code>Object.keys</code> + <code>forEach</code> to log <code>"key -&gt; title"</code>.</li>
+        <li>Use <code>for...in</code> to log every property name of <code>marioKart8</code>.</li>
+        <li>Use <code>for...in</code> + <code>typeof</code> to log each property of <code>theWitcher3</code> with the type of its value.</li>
+        <li>Use <code>forEach</code> + <code>if</code> to log only titles rated 9.5 or higher.</li>
+        <li>Log the titles of every game not released yet.</li>
+        <li>Collect all genres into one array with no duplicates (check with <code>indexOf</code>, add at index <code>.length</code>).</li>
+        <li>Average rating, skipping values where <code>typeof</code> isn't <code>"number"</code>.</li>
+        <li>Fill an empty object in a loop so it becomes <code>{ title: releaseYear }</code>.</li>
+        <li>Copy Hollow Knight into an empty object with a <code>for...in</code> loop, change the copy's rating, prove the original is unchanged. Then change <code>copy.developer.country</code> — what happens?</li>
+        <li>Check for keys <code>"zelda"</code> and <code>"rdr2"</code> with <code>in</code>, then by comparing with <code>undefined</code>.</li>
+        <li>Find the oldest and the newest game with a loop.</li>
+        <li>Nested <code>forEach</code>: log <code>"Game -&gt; Character (role)"</code> for every character.</li>
+        <li>Use <code>indexOf</code> to log which games are / aren't on <code>"Switch"</code>.</li>
+        <li>Count games per developer into an object.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Part 3 – Create &amp; Append Elements</h2>
+      <ol>
+        <li>With <code>forEach</code>, for each game create an <code>&lt;li&gt;</code> with <code>"Title (Year)"</code> and append it to <code>#games-list</code>.</li>
+        <li>Build a game card (<code>h3</code> title, <code>p</code> developer, <code>ul</code> of characters) inside a <code>div.card</code> and append it to <code>#game-card</code>. Extra: a <code>createCard(game)</code> function for all games.</li>
+      </ol>
+      <div class="output">
+        <ul id="games-list"></ul>
+      </div>
+      <div class="output" id="game-card"></div>
+    </section>
+
+    <section>
+      <h2>Bonus – Freeze &amp; Seal</h2>
+      <p><code>Object.freeze(obj)</code>: no adding, no removing, no changing — fully read-only.</p>
+      <p><code>Object.seal(obj)</code>: no adding, no removing, but you <em>can</em> change existing values.</p>
+      <p>Blocked operations fail silently (or throw in <code>"use strict"</code>). Both are <strong>shallow</strong>: nested objects stay editable.</p>
+      <ol type="a">
+        <li>Freeze <code>crashBandicoot</code>, try to change <code>rating</code>, add <code>price</code>, delete <code>genres</code>.</li>
+        <li>Seal <code>marioKart8</code> and try the same.</li>
+        <li>Log <code>Object.isFrozen</code> / <code>Object.isSealed</code> for both.</li>
+        <li>Change <code>crashBandicoot.developer.name</code> — does it work? Why?</li>
+        <li>(Hard) Write <code>deepFreeze(obj)</code>.</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
