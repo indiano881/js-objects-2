@@ -16,22 +16,6 @@
 // Values can be ANY type, including other objects and arrays.
 // 2. VALUE vs REFERENCE
 // 3. ACCESS SYNTAX — DOT NOTATION vs BRACKET NOTATION
-// 
-// Dot notation (most common, key must be a valid name):
-//
-//   game.title
-//   game.developer.name
-//
-// Bracket notation (key is a STRING or a VARIABLE):
-//
-//   game["title"]
-//   game["release year"]       // keys with spaces / dashes
-//
-//   const key = "rating";
-//   game[key]                  // dynamic key  -> game.rating
-//   game.key                   // WRONG: looks for a key literally named "key"
-//
-// Accessing a key that doesn't exist returns undefined (no error).
 // 4. ADDING, CHANGING, REMOVING VALUES
 // 5. NAVIGATING NESTED OBJECTS  (
 // 6. KEYS, VALUES, ENTRIES (Object static methods)
